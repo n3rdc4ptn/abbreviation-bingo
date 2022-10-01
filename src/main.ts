@@ -87,7 +87,7 @@ const rollBtn = document.getElementById("btn-next-abbr")!;
 
 rollBtn.addEventListener("click", () => {
   if (currentBingoGame) {
-    let abbr = currentBingoGame.roll();
+    currentBingoGame.roll();
 
     initUI();
   }
