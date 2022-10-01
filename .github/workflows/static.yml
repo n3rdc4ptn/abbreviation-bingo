@@ -36,15 +36,16 @@ jobs:
           node-version: 16
       - name: Install packages
         run: yarn install
-      - name: Build
-        run: yarn build
       - name: Setup Pages
+        id: setuppages
         uses: actions/configure-pages@v2
+      - name: Build
+        run: yarn build --base=${{ steps.setuppages.outputs.base_path }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './dist'
+          path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
