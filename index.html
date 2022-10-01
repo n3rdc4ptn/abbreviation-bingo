@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+
+</head>
+
+<body>
+  <div class="container mx-auto p-7 h-[100vh] flex flex-col items-center gap-5">
+    <h1 class="text-2xl text-center">Abkürzungsbingo</h1>
+
+    <div class="flex-1 flex flex-col justify-center items-center">
+      <span id="current-abbr" class="text-8xl"></span>
+    </div>
+
+    <div>
+
+      <button id="btn-prev-abbr" class="hidden btn text-blue-600 btn-link text-sm">
+        Zurück
+      </button>
+      <button id="btn-next-abbr" class="hidden btn text-xl">
+        Weiter
+      </button>
+    </div>
+
+    <div class="w-full">
+      <h2 class="text-lg mb-2">Letzte Abkürzungen:</h2>
+      <div id="latest-abbr"></div>
+    </div>
+
+    <div class="w-full flex justify-end">
+      <div class="mr-3">
+        <label class="btn" for="csv-input">CSV laden</label>
+        <input class="hidden" type="file" id="csv-input" accept="text/csv" />
+      </div>
+
+      <button id="btn-restart" class="btn text-xl">
+        <i class="las la-redo-alt"></i>
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
