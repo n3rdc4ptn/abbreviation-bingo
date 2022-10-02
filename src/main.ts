@@ -1,7 +1,9 @@
 import "./style.css";
+import "animate.css";
 import "./assets/lineawesome/css/line-awesome.min.css";
 import { parseText } from "./lib/csv";
 import { BingoGame } from "./lib/bingo";
+import { animateCSS } from "./lib/animation";
 
 type Abbr = {
   abbr: string;
@@ -69,6 +71,9 @@ function initUI() {
   let currentAbbr = document.getElementById("current-abbr")!;
   let latestPicked =
     currentBingoGame!.picked[currentBingoGame!.picked.length - 1];
+
+  animateCSS(currentAbbr, "bounceInDown");
+
   currentAbbr.innerText = latestPicked ? latestPicked.abbr : "";
 
   // Init latest abbr list
