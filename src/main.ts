@@ -11,6 +11,23 @@ type Abbr = {
 let currentBingoGame: BingoGame<Abbr> | null = null;
 let currentData: Array<Abbr> = [];
 
+// load data from localstorage
+function loadDataFromLocalstorage() {
+  const data = localStorage.getItem("data");
+  if (data) {
+    currentData = JSON.parse(data);
+  }
+}
+
+// save data to localstorage
+function saveDataToLocalstorage() {
+  localStorage.setItem("data", JSON.stringify(currentData));
+}
+
+// Init with data from localstorage
+loadDataFromLocalstorage();
+initBingoGame();
+
 // Listen for uploaded csv on csv-input
 const csvInput = document.getElementById("csv-input")!;
 
@@ -31,6 +48,7 @@ csvInput.addEventListener("change", (ev) => {
 
     // Parse text
     currentData = parseText<Abbr>(text);
+    saveDataToLocalstorage();
 
     initBingoGame();
   };
