@@ -1,3 +1,8 @@
+<!--
+  This game is build by Moritz Reich (@n3rdc4ptn).
+
+  moritzreich.dev
+-->
 <!DOCTYPE html>
 <html lang="de">
 
@@ -14,8 +19,16 @@
 
     <h1 class="text-2xl text-center">Abkürzungsbingo</h1>
 
-    <div class="flex-1 flex flex-col justify-center items-center">
+    <div class="flex-1 flex flex-col justify-center items-center gap-2">
       <span id="current-abbr" class="text-8xl"></span>
+
+      <div class="toggle-btn text-4xl">
+        <span id="current-longform">Test</span>
+      </div>
+
+      <div class="toggle-btn text-4xl">
+        <span id="current-description">Test</span>
+      </div>
     </div>
 
     <div>
@@ -30,7 +43,7 @@
 
     <div class="w-full">
       <h2 class="text-lg mb-2">Letzte Abkürzungen:</h2>
-      <div id="latest-abbr"></div>
+      <div id="latest-abbr" class="flex flex-row gap-2"></div>
     </div>
 
     <div class="w-full flex justify-end">

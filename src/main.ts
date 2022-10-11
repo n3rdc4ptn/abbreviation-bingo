@@ -4,10 +4,14 @@ import "./assets/lineawesome/css/line-awesome.min.css";
 import { parseText } from "./lib/csv";
 import { BingoGame } from "./lib/bingo";
 import { animateCSS } from "./lib/animation";
+import { hideAllBtns, initToggleBtns } from "./lib/togglebtn";
+
+initToggleBtns();
 
 type Abbr = {
   abbr: string;
   longForm: string;
+  description: string;
 };
 
 let currentBingoGame: BingoGame<Abbr> | null = null;
@@ -69,12 +73,18 @@ function initBingoGame() {
 function initUI() {
   // Init current abbr
   let currentAbbr = document.getElementById("current-abbr")!;
+  let currentLongForm = document.getElementById("current-longform")!;
+  let currentDescription = document.getElementById("current-description")!;
+
   let latestPicked =
     currentBingoGame!.picked[currentBingoGame!.picked.length - 1];
 
   animateCSS(currentAbbr, "bounceInDown");
 
+  hideAllBtns();
   currentAbbr.innerText = latestPicked ? latestPicked.abbr : "";
+  currentLongForm.innerText = latestPicked ? latestPicked.longForm : "";
+  currentDescription.innerText = latestPicked ? latestPicked.description : "";
 
   // Init latest abbr list
   const latestAbbr = document.getElementById("latest-abbr")!;

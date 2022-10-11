@@ -1,5 +1,5 @@
-abbr,longForm
-HDMI,High-Definition Multimedia Interface
-HDTV,High-Definition Television
-DVI,Digital Visual Interface
-VGA,Video Graphics Array
+abbr,longForm,description
+HDMI,High-Definition Multimedia Interface,Bla bla
+HDTV,High-Definition Television,Bla bla
+DVI,Digital Visual Interface,Bla bla
+VGA,Video Graphics Array,Bla bla

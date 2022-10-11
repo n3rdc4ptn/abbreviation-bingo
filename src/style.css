@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.toggle-btn {
+  cursor: pointer;
+}
+
+.toggle-btn::before {
+  content: "+";
+  cursor: pointer;
+  @apply text-gray-400;
+}
+
+.toggle-btn.show::before {
+  content: "";
+}
+
+.toggle-btn * {
+  @apply hidden;
+}
+
+.toggle-btn.show * {
+  @apply block;
+}
