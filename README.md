@@ -6,8 +6,8 @@ This is a simple game to help you learn abbreviations. It's a work in progress.
 Create a csv with the following structure:
 
 ```csv
-abbr,longForm,description
-HDMI,High-Definition Multimedia Interface,An interface for transmitting uncompressed video and audio data
+abbr;longForm;description
+HDMI;High-Definition Multimedia Interface;An interface for transmitting uncompressed video and audio data
 ...
 ```
 
