@@ -3,7 +3,7 @@
  */
 export function parseText<T>(text: string, split_char = ";"): Array<T> {
   let lines = text.split("\n");
-  let headers = lines[0].split(split_char);
+  let headers = lines[0].split(split_char).map((v) => v.trim());
   let data = lines
     .slice(1)
     .map((line) => line.split(split_char))
