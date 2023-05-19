@@ -40,7 +40,12 @@ jobs:
         id: setuppages
         uses: actions/configure-pages@v2
       - name: Build
-        run: yarn build --base=${{ steps.setuppages.outputs.base_path }}
+        run: |
+          if [ -z "${{ steps.setuppages.outputs.base_path }}" ]; then
+            yarn build
+          else
+            yarn build --base=${{ steps.setuppages.outputs.base_path }}
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
