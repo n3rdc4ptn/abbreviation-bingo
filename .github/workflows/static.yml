@@ -46,16 +46,6 @@ jobs:
           else
             yarn build --base=${{ steps.setuppages.outputs.base_path }}
           fi
-      - name: Replace tracking placeholder
-        run: |
-          TRACKING_SCRIPT="${{ vars.TRACKING_SCRIPT }}"
-
-          if [ -z '$TRACKING_SCRIPT' ]; then
-            echo "No tracking script provided, skipping"
-          else
-            echo "Replacing tracking script placeholder with $TRACKING_SCRIPT"
-            sed -i 's|<!-- %TRACKING_CODE% -->|${{ vars.TRACKING_SCRIPT }}|g' ./dist/index.html
-          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
