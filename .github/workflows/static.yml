@@ -48,7 +48,7 @@ jobs:
           fi
       - name: Replace tracking placeholder
         run: |
-          TRACKING_SCRIPT=${{ variables.TRACKING_SCRIPT }}
+          TRACKING_SCRIPT="${{ vars.TRACKING_SCRIPT }}"
 
           if [ -z "$TRACKING_SCRIPT" ]; then
             echo "No tracking script provided, skipping"
