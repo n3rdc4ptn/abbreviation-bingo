@@ -11,3 +11,5 @@ updates:
       interval: "weekly"
     assignees:
       - "n3rdc4ptn"
+    reviewers:
+      - "n3rdc4ptn"
