@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "daisyui": "^2.51.6"
+    "daisyui": "^2.52.0"
   }
 }
