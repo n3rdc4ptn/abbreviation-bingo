@@ -13,3 +13,8 @@ updates:
       - "n3rdc4ptn"
     reviewers:
       - "n3rdc4ptn"
+    groups:
+      updates:
+        applies-to: version-updates
+        patterns:
+          - "*"
