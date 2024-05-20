@@ -39,9 +39,9 @@ jobs:
       - name: Build
         run: |
           if [ -z "${{ steps.setuppages.outputs.base_path }}" ]; then
-            bun build
+            bun run build
           else
-            bun build --base=${{ steps.setuppages.outputs.base_path }}
+            bun run build --base=${{ steps.setuppages.outputs.base_path }}
           fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

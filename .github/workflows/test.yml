@@ -16,4 +16,4 @@ jobs:
       - name: Install packages
         run: bun install
       - name: Build
-        run: bun build
+        run: bun run build
