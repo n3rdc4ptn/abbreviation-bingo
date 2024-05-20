@@ -9,6 +9,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    rebase-strategy: auto
     assignees:
       - "n3rdc4ptn"
     reviewers:
