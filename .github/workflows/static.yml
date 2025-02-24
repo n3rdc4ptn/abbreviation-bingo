@@ -30,12 +30,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
+      - uses: oven-sh/setup-bun@v2
       - name: Install packages
         run: bun install
       - name: Setup Pages
         id: setuppages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v5
       - name: Build
         run: |
           if [ -z "${{ steps.setuppages.outputs.base_path }}" ]; then
@@ -44,10 +44,10 @@ jobs:
             bun run build --base=${{ steps.setuppages.outputs.base_path }}
           fi
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
