@@ -19,6 +19,6 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "caniuse-lite": "^1.0.30001700",
-    "daisyui": "^4.11.1"
+    "daisyui": "^5.0.0"
   }
 }
