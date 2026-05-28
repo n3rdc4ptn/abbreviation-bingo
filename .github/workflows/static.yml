@@ -35,7 +35,7 @@ jobs:
         run: bun install
       - name: Setup Pages
         id: setuppages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Build
         run: |
           if [ -z "${{ steps.setuppages.outputs.base_path }}" ]; then
@@ -44,10 +44,10 @@ jobs:
             bun run build --base=${{ steps.setuppages.outputs.base_path }}
           fi
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           # Upload entire repository
           path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
